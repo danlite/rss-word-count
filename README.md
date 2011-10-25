@@ -18,8 +18,10 @@ Developing on Mac OS X, I found it necessary to install Nokogiri using the homeb
 
 ### Assumptions and Limitations
 
-Parses only RSS feeds (support for Atom feeds would require slight modifications to `rss_parse.rb`).
+Parses only RSS feeds (support for Atom feeds would require slight modifications to `rss_parse.rb`). Does not attempt to validate RSS.
 
 Counts words found in the main content sections of the linked article, rather than all text on the page (e.g. navigation, advertisements, headers and footers, etc.).
 
 Will only parse first page of a paginated article (a feature missing from the Ruby port of Readability).
+
+For large feeds and articles, parsing may take a long time (~60 seconds). This may cause the app running on Heroku to time out. To scale performance, parsing should be added to a queue to be performed in a background worker. Per-article word counts could be cached for better performance on subsequent requests.
