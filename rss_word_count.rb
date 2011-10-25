@@ -8,7 +8,10 @@ require './lib/rss_parse'
 
 before '/count*' do
   @rss_url = params[:rss_url]
+  
   redirect '/' if @rss_url.to_s.empty?
+  
+  @rss_url = "http://#{@rss_url}" unless @rss_url =~ /^(https?)|(ftp):\/\//
 end
 
 get '/' do
