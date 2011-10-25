@@ -1,22 +1,27 @@
-### Instructions
+## Instructions
 
-`$ gem install bundler`
+#### Sinatra App
 
-`$ bundle install`
+    $ gem install bundler
+    $ bundle install
+    $ ruby -rubygems rss_word_count.rb
 
-`$ ruby -rubygems rss_word_count.rb`
+#### Command-line
 
-### Caveats
+	$ ruby rsswc_cli.rb "http://rss.cbc.ca/lineup/topstories.xml"
+
+
+## Caveats
 
 Developing on Mac OS X, I found it necessary to install Nokogiri using the homebrew instructions on the [Nokogiri website](http://nokogiri.org/tutorials/installing_nokogiri.html) (using libxml version 2.7.8 instead of 2.7.7).
 
-### Libraries
+## Libraries
 
 - OpenURI for fetching RSS feed and articles
 - Nokogiri for parsing RSS feed
 - Port of [Readability](http://code.google.com/p/arc90labs-readability/) to extract article content from the HTML 
 
-### Assumptions and Limitations
+## Assumptions and Limitations
 
 Parses only RSS feeds (support for Atom feeds would require slight modifications to `rss_parse.rb`). Does not attempt to validate RSS.
 
