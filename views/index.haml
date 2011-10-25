@@ -1,0 +1,5 @@
+%form{:action => '/count', :method => :post}
+	%label{:for => 'rss_url'}= "RSS URL: "
+	%input{:id => 'rss_url', :type => 'text', :name => 'rss_url', :style => 'width: 300px'}
+	%button{:onclick => 'this.form.action = "/count"; this.form.submit();'}= "HTML"
+	%button{:onclick => 'this.form.action = "/count.json"; this.form.submit();'}= "JSON"
