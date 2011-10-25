@@ -8,7 +8,9 @@
 
 #### Command-line
 
-	$ ruby rsswc_cli.rb "http://rss.cbc.ca/lineup/topstories.xml"
+    $ gem install bundler
+    $ bundle install
+    $ ruby rsswc_cli.rb "http://rss.cbc.ca/lineup/topstories.xml"
 
 
 ## Caveats
